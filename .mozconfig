@@ -14,14 +14,11 @@ mk_add_options MOZ_OPTIMIZE_LDFLAGS="-FORCE"
 
 ac_add_options --disable-crashreporter
 ac_add_options --disable-eme
-ac_add_options --disable-ipdl-tests
-ac_add_options --disable-jemalloc
 ac_add_options --disable-js-diagnostics
 ac_add_options --disable-maintenance-service
 ac_add_options --disable-profiling
 ac_add_options --disable-services-healthreport
 ac_add_options --disable-telemetry-reporting
-ac_add_options --disable-tests
 ac_add_options --disable-verify-mar
 ac_add_options --disable-webapp-runtime
 ac_add_options --disable-websms-backend
