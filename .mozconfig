@@ -1,9 +1,7 @@
 . $topsrcdir/browser/config/mozconfig
 
-export CC="icl"
-export CXX="icl"
-export LD="xilink"
-export AR="xilib"
+export CC="clang-cl"
+export CXX="clang-cl"
 export MOZ_OPTIMIZE_LDFLAGS="-FORCE"
 export MOZ_TELEMETRY_REPORTING=
 export WIN32_REDIST_DIR="C:/PROGRA~2/MICROS~1.0/VC/redist/x64/MICROS~1.CRT"
@@ -14,17 +12,19 @@ mk_add_options MOZ_OPTIMIZE_LDFLAGS="-FORCE"
 
 ac_add_options --disable-crashreporter
 ac_add_options --disable-eme
+ac_add_options --disable-ipdl-tests
 ac_add_options --disable-js-diagnostics
 ac_add_options --disable-maintenance-service
 ac_add_options --disable-profiling
 ac_add_options --disable-services-healthreport
 ac_add_options --disable-telemetry-reporting
+ac_add_options --disable-tests
 ac_add_options --disable-verify-mar
 ac_add_options --disable-webapp-runtime
 ac_add_options --disable-websms-backend
 
 ac_add_options --enable-application=browser
-ac_add_options --enable-optimize="-std=c++11 -O3 -w"
+ac_add_options --enable-optimize="-O2 -Qvec -w"
 ac_add_options --enable-update-channel=release
 ac_add_options --enable-updater
 ac_add_options --enable-update-packaging
@@ -33,5 +33,5 @@ ac_add_options --host=x86_64-pc-mingw32
 ac_add_options --target=x86_64-pc-mingw32
 
 ac_add_options --with-app-name=waterfox
-#ac_add_options --with-branding=browser/branding/waterfox
+ac_add_options --with-branding=browser/branding/waterfox
 ac_add_options --with-distribution-id=org.Waterfoxproject
